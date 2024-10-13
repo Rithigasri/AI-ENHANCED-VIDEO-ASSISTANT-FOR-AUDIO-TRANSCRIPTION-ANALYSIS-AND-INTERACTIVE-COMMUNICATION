@@ -1,74 +1,23 @@
-// import React, { useState } from 'react';
-// import { Box, Typography, Button } from '@mui/material';
-// import axios from 'axios';
-
-// const QA = ({ setAnswer, setAudioFile }) => {
-//   const [question, setQuestion] = useState('');
-
-//   const handleQuestionSubmit = async () => {
-//     if (!question) {
-//       alert("Please enter a question.");
-//       return;
-//     }
-
-//     try {
-//       const response = await axios.post('http://localhost:5000/qa', { question });
-//       setAnswer(response.data.answer); // Pass answer to parent
-//       setAudioFile(response.data.audio_file); // Set the audio file path
-//     } catch (error) {
-//       console.error("Error submitting question:", error);
-//     }
-//   };
-
-//   return (
-//     <Box sx={{ my: 2 }}>
-//       <Typography variant="h5">Ask a Question</Typography>
-//       <input
-//         type="text"
-//         placeholder="Type your question here..."
-//         value={question}
-//         onChange={(e) => setQuestion(e.target.value)}
-//         style={{ width: '100%', padding: '8px' }}
-//       />
-//       <Button
-//         variant="contained"
-//         color="primary"
-//         onClick={handleQuestionSubmit}
-//         sx={{ mt: 1 }}
-//       >
-//         Submit
-//       </Button>
-//     </Box>
-//   );
-// };
-
-// export default QA;
-
 import React, { useState } from 'react';
 import { Box, Typography, Button, TextField } from '@mui/material';
-import axios from 'axios';
+import '../App.css'; // Import CSS
 
-const QA = ({ setAnswer, setAudioFile, language }) => {
+const QA = ({ setAnswer, setAudioFile, language, onQA }) => {
   const [question, setQuestion] = useState('');
 
-  const handleQuestionSubmit = async () => {
+  const handleQA = () => {
     if (!question) {
       alert("Please enter a question.");
       return;
     }
 
-    try {
-      const response = await axios.post('http://localhost:5000/qa', { question, target_lang: language });
-
-      setAnswer(response.data.answer); 
-      setAudioFile(response.data.audio_file); 
-    } catch (error) {
-      console.error("Error submitting question:", error);
-    }
+    onQA(question); // Call the function passed down from VideoUpload
+    // Optionally, you can keep the question for review or further modifications
+    // setQuestion(''); // Remove this line to keep the question in the input field
   };
 
   return (
-    <Box sx={{ my: 2 }}>
+    <Box className="qabox">
       <Typography variant="h5">Ask a Question</Typography>
       <TextField
         variant="outlined"
@@ -81,7 +30,7 @@ const QA = ({ setAnswer, setAudioFile, language }) => {
       <Button
         variant="contained"
         color="primary"
-        onClick={handleQuestionSubmit}
+        onClick={handleQA} // Call the new handleQA function here
         sx={{ mt: 2 }}
       >
         Submit
@@ -91,4 +40,3 @@ const QA = ({ setAnswer, setAudioFile, language }) => {
 };
 
 export default QA;
-
