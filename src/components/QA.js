@@ -91,3 +91,4 @@ const QA = ({ setAnswer, setAudioFile, language }) => {
 };
 
 export default QA;
+
