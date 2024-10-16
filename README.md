@@ -58,7 +58,7 @@ The AI Video Assistant achieved high accuracy in transcription (~90-95%), summar
 
 [2] I. Aljarrah and D. Mohammad, "Video content analysis using convolutional neural networks," 2018 9th International Conference on Information and Communication Systems (ICICS), Irbid, Jordan, 2018, pp. 122-126, doi: 10.1109/IACS.2018.8355453.    
 
-[3] V. M. Reddy, T. Vaishnavi and K. P. Kumar, "Speech-to-Text and Text-to-Speech Recognition Using Deep Learning," 2023 2nd International Conference on Edge Computing and Applications (ICECAA), Namakkal, India, 2023, pp. 657-666, doi: 10.1109/ICECAA58104.2023.10212222.  
+[3] V. M. Reddy, T. Vaishnavi and K. P. Kumar, "Speech-to-Text and Text-to-Speech Recognition Using Deep-Learning," 2023 2nd International Conference on Edge Computing and Applications (ICECAA), Namakkal, India, 2023, pp. 657-666, doi: 10.1109/ICECAA58104.2023.10212222.  
 
 [4] Patil, Gayatri & Saravanan, Krithika & Sapariya, Bhakti & Gotarne, Prajakta. (2024). Chrome Extension for Speech-to-Text Conversion and Text Summarization Using NLP. 1-7. 10.1109/ICITEICS61368.2024.10624940.
 
